@@ -1,14 +1,22 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
+import createPersistedState from "vuex-persistedstate";
 
-export default createStore({
+const store = createStore({
+  plugins: [createPersistedState()],
   state: {
-  },
-  getters: {
+    tasks: [],
   },
   mutations: {
+    addTask(state, task) {
+      state.tasks.push(task);
+    },
+    editTask(state, { index, task }) {
+      state.tasks[index] = task;
+    },
+    deleteTask(state, index) {
+      state.tasks.splice(index, 1);
+    },
   },
-  actions: {
-  },
-  modules: {
-  }
-})
+});
+
+export default store;
