@@ -65,10 +65,9 @@ export default {
     ...mapState(["tasks"]),
   },
   methods: {
-    ...mapMutations(["addTask", "editTask", "deleteTask"]),
+    ...mapMutations(["addTask"]),
     addTasker() {
       this.addTask({ name: this.newTask, id: Date() });
-
       this.newTask = "";
     },
     editTask(index, task) {
