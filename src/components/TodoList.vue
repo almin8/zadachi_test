@@ -8,14 +8,14 @@
       <div class="list">
         <ol>
           <li class="entry" v-for="task in tasks" :key="[task.id]">
-            <div class="acitvater" v-if="!active[task.id]">
+            <div class="acitvater" v-show="!active[task.id]">
               {{ task.name }}
             </div>
             <input
               class="acitvaterNone"
-              v-if="active[task.id]"
-              v-model="task.name"
-              type="text"
+              v-show="active[task.id]"
+              v-model.lazy="task.name"
+              type="search"
               :disabled="!active[task.id]"
             />
             <div
