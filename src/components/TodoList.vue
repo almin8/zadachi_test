@@ -15,7 +15,7 @@
               class="acitvaterNone"
               v-show="active[task.id]"
               v-model.lazy="task.name"
-              type="search"
+              type="text"
               :disabled="!active[task.id]"
             />
             <div

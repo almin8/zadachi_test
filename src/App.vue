@@ -14,5 +14,6 @@ button {
   border-color: black;
   border-radius: 0.5px;
   border-radius: 0;
+  color: black;
 }
 </style>
